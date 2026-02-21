@@ -1,13 +1,15 @@
 //inventory class
 public class Inventory
 {
-    double price = (double) (Math.random()* 10);
+    double min = 1.00;
+    double max = 10.00;
+    double priceAdjustment = 1.00; 
+    double priceRange = max - min + priceAdjustment;
     //inventory list.
-    //randomize avilable items.
-    double noteBooks = price;
-    double calculators = price;
-    double backPacks = price;
-    double blackPens = price;
-    double pencils = price;
-
+    //randomize available item prices.
+    double noteBooks = (double) (Math.random()* (priceRange));
+    double calculators = (double) (Math.random()* (priceRange));
+    double backPacks = (double) (Math.random()* (priceRange));
+    double blackPens = (double) (Math.random()* (priceRange));
+    double pencils = (double) (Math.random()* (priceRange));
 }
