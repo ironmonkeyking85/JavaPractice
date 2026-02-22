@@ -3,11 +3,12 @@ import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+
 public class Main 
 {
     public static void main(String[] args)
     {
-        // TO DO: Display avilable items, from inventory class.
+        // TO DO: Get avilable items, from inventory class.
         Inventory buyInventory = new Inventory();
         CalculatePrice total = new CalculatePrice();
         Scanner input = new Scanner(System.in);
@@ -28,6 +29,7 @@ public class Main
         }
         System.out.print("\n");
 
+        // TO DO: Display avilable items.
         DecimalFormat nb = new DecimalFormat("#.##");
         System.out.print("notebooks:".toUpperCase()+" "+ "$");
         System.out.println(nb.format(buyInventory.noteBooks));
@@ -50,7 +52,10 @@ public class Main
         System.out.println("\n");
 
         // TO DO: Get user input for list.
-        // TO DO: Take input argument and use with calculate class.    
+        // TO DO: Take input argument and use with calculate class.  
+        
+        
+       
         int buyNoteBooks = 0;
         int buyCalulators = 0;
         int buyBackPacks = 0;
@@ -58,52 +63,59 @@ public class Main
         int buyPencils = 0; 
         double finalPrice = 0;
         DecimalFormat fm = new DecimalFormat("#.##");
+        int completeOrder = 0;
 
         
+        // TO DO: Display sub-totol.
         System.out.print("How many Notbooks: ");
         buyNoteBooks = input.nextInt();
         System.out.println("You bought " + buyNoteBooks + " notebooks." + " " + "SubTotal: $" + fm.format(total.subTotal(buyNoteBooks, buyInventory.noteBooks)));
         finalPrice += total.subTotal(buyNoteBooks, buyInventory.noteBooks);
+        completeOrder = 0;
+        
         System.out.println("\n");
         
         System.out.print("How many Calculators: ");
         buyCalulators = input.nextInt();
         System.out.println("You bought " + buyCalulators + " calculators." + " " + "SubTotal: $" + fm.format(total.subTotal(buyCalulators, buyInventory.calculators)));
         finalPrice += total.subTotal(buyCalulators, buyInventory.calculators);
+        completeOrder = 0;
+
         System.out.println("\n");
 
          System.out.print("How many BackPacks: ");
         buyBackPacks = input.nextInt();
         System.out.println("You bought " + buyBackPacks + " backpacks."+ " " + "SubTotal: $" + fm.format(total.subTotal(buyBackPacks, buyInventory.backPacks)) );
         finalPrice += total.subTotal(buyBackPacks, buyInventory.backPacks);
+        completeOrder = 0;
+
         System.out.println("\n");
 
         System.out.print("How many BlackPens: ");
         buyBlackpens = input.nextInt();
         System.out.println("You bought " + buyBlackpens + " blackpens." + " " + "SubTotal: $" + fm.format(total.subTotal(buyBlackpens, buyInventory.backPacks)));
         finalPrice += total.subTotal(buyBlackpens, buyInventory.backPacks);
+        completeOrder = 0;
+
         System.out.println("\n");
 
         System.out.print("How many Pencils: ");
         buyPencils = input.nextInt();
         System.out.println("You bought " + buyPencils + " pencils." + " " + "SubTotal: $" + fm.format(total.subTotal(buyPencils, buyInventory.pencils)));
         finalPrice += total.subTotal(buyPencils, buyInventory.pencils);
-        System.out.println("\n");
-
-      //  if (!input.hasNextInt())
-        //{    
-          //  System.out.println("Invalid entry, plaease enter whole numbers.");
-       // }
+        completeOrder = 100;
         
-        // TO DO: Display avilable items.
-        // TO DO: display totals from list of bought items.
-        // TO DO: display sub-totol.
-        // TO DO: error check for user input
-        // TO DO: If user presses enter when order is complete then do next tasks.
+        System.out.println("\n");
+        
+        
+        if (completeOrder == 100)
+        {
+             // TO DO: If user presses enter when order is complete then do next tasks.
         String linedivider = "_";
         int divider = 1;
         int dividerCount = 25;
-        while (divider < dividerCount) {
+        while (divider < dividerCount) 
+            {
             System.out.print(linedivider + " ");
             divider++;
             
@@ -113,14 +125,43 @@ public class Main
                 }
                 
             }
-        input.close();
+         // TO DO: error check for user input
+    
+        //input.close();
         System.out.print("\n");
+
+        // TO DO: display totals from list of bought items.
         String totals = "GRAND TOTAL: $" + fm.format(finalPrice);
         String grandTotal = String.format("%33s", totals);
         System.out.println(" " + grandTotal + " ");
+
+        
+        
+    //  TO DO: If user presses enter when order is complete then do next tasks.
+    //    String linedivider = "_";
+    //   int divider = 1;
+    // int dividerCount = 25;
+    //    while (divider < dividerCount) {
+    //        System.out.print(linedivider + " ");
+    //        divider++;
+            
+    //        if (divider == dividerCount)
+    //           {
+    //               break;
+    //           }
+                
+    //        }
+        
+        System.out.print("\n");
+
+        // TO DO: display totals from list of bought items.
+     //   String totals = "GRAND TOTAL: $" + fm.format(finalPrice);
+    //    String grandTotal = String.format("%33s", totals);
+    //    System.out.println(" " + grandTotal + " ");
         String linedivider2 = "_";
         int divider2 = 1;
         int dividerCount2 = 25;
+
         while (divider2 < dividerCount2) {
             System.out.print(linedivider2 + " ");
             divider2++;
@@ -144,6 +185,10 @@ public class Main
         System.out.println(" " + time + " ");
         // TO DO: Thank user for purchase.
         System.out.println(" " + thankYou + " ");
+        
+        input.close(); 
+        
+        }
     }
 }
 

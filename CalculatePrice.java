@@ -2,11 +2,14 @@
 public class CalculatePrice {
     // TO DO: import inventory class object
     Inventory currentInventory = new Inventory();
+    
 
     public double subTotal(double amount, double currentPrice)
     {
-      double subtotal = amount * currentPrice;
-      return subtotal;
+      
+        double subtotal = amount * currentPrice;
+        return subtotal;
+      
     }
 
     public double grandTotal(double total)
@@ -15,5 +18,5 @@ public class CalculatePrice {
       return totalorderprice;
     }
 
-    
+
 }
