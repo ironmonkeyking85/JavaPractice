@@ -59,9 +59,12 @@ public class Main
         DecimalFormat fm = new DecimalFormat("#.##");
         int completeOrder = 0;
 
-        
-        
         System.out.print("How many Notbooks: ");
+        while (!input.hasNextInt()) 
+        {
+            System.out.println("Invalid entry, please enter whole numbers.");
+            input.next();
+        }
         buyNoteBooks = input.nextInt();
         System.out.println("You bought " + buyNoteBooks + " notebooks." + " " + "SubTotal: $" + fm.format(total.subTotal(buyNoteBooks, buyInventory.noteBooks)));
         finalPrice += total.subTotal(buyNoteBooks, buyInventory.noteBooks);
@@ -70,6 +73,11 @@ public class Main
         System.out.println("\n");
         
         System.out.print("How many Calculators: ");
+        while (!input.hasNextInt()) 
+        {
+            System.out.println("Invalid entry, please enter whole numbers.");
+            input.next();
+        }
         buyCalulators = input.nextInt();
         System.out.println("You bought " + buyCalulators + " calculators." + " " + "SubTotal: $" + fm.format(total.subTotal(buyCalulators, buyInventory.calculators)));
         finalPrice += total.subTotal(buyCalulators, buyInventory.calculators);
@@ -77,7 +85,12 @@ public class Main
 
         System.out.println("\n");
 
-         System.out.print("How many BackPacks: ");
+        System.out.print("How many BackPacks: ");
+        while (!input.hasNextInt()) 
+        {
+            System.out.println("Invalid entry, please enter whole numbers.");
+            input.next();
+        }
         buyBackPacks = input.nextInt();
         System.out.println("You bought " + buyBackPacks + " backpacks."+ " " + "SubTotal: $" + fm.format(total.subTotal(buyBackPacks, buyInventory.backPacks)) );
         finalPrice += total.subTotal(buyBackPacks, buyInventory.backPacks);
@@ -86,6 +99,11 @@ public class Main
         System.out.println("\n");
 
         System.out.print("How many BlackPens: ");
+        while (!input.hasNextInt()) 
+        {
+            System.out.println("Invalid entry, please enter whole numbers.");
+            input.next();
+        }
         buyBlackpens = input.nextInt();
         System.out.println("You bought " + buyBlackpens + " blackpens." + " " + "SubTotal: $" + fm.format(total.subTotal(buyBlackpens, buyInventory.backPacks)));
         finalPrice += total.subTotal(buyBlackpens, buyInventory.backPacks);
@@ -94,6 +112,11 @@ public class Main
         System.out.println("\n");
 
         System.out.print("How many Pencils: ");
+        while (!input.hasNextInt()) 
+        {
+            System.out.println("Invalid entry, please enter whole numbers.");
+            input.next();
+        }
         buyPencils = input.nextInt();
         System.out.println("You bought " + buyPencils + " pencils." + " " + "SubTotal: $" + fm.format(total.subTotal(buyPencils, buyInventory.pencils)));
         finalPrice += total.subTotal(buyPencils, buyInventory.pencils);
@@ -149,13 +172,13 @@ public class Main
         String time = String.format("%32s", newTimeFormat);
         String thankYou = String.format("%35s", thanks);
         System.out.println(" " + time + " ");
-       
         System.out.println(" " + thankYou + " ");
-        
+
         input.close(); 
-        
-        }
+        } 
+
     }
+    
 }
 
 

@@ -1,6 +1,5 @@
-// TO DO: calculate totals class
 public class CalculatePrice {
-    // TO DO: import inventory class object
+    
     Inventory currentInventory = new Inventory();
     
 
